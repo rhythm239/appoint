@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Appointment Scheduling</h2>
+
+<form id="appointmentForm" onsubmit="validateForm(); return false;">
+    <label>
+        <input type="checkbox" id="waterCheckbox"> Drank atleast 4 liters of water
+    </label>
+    <label>
+        <input type="checkbox" id="fruitCheckbox"> Ate at least one fruit
+    </label>
+    <button type="submit">Schedule Appointment</button>
+</form>
+
+<script>
+    function validateForm() {
+        var waterCheckbox = document.getElementById('waterCheckbox');
+        var fruitCheckbox = document.getElementById('fruitCheckbox');
+
+        if (waterCheckbox.checked && fruitCheckbox.checked) {
+            alert('Your Appointment with rhythm has been scheduled successfully!');
+        } else {
+            alert('Please tick both checkboxes before scheduling an appointment.');
+        }
+    }
+</script>
+
+</body>
+</html>
